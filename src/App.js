@@ -37,7 +37,7 @@ function App() {
             <h1>Higher of Lower</h1>
             <h2>Cities Cost of Living Edition!</h2>
             <p id="score">Score: {score}</p>
-            <p>Is</p>
+            <p>Is the cost of living in</p>
             <City cityName={city1[1]} />
             <ButtonHigherLower
                 text="higher"
