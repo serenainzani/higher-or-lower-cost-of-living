@@ -15,7 +15,7 @@
 //         });
 // }
 
-const citiesData = [
+const citiesNestedArray = [
     ["1st", "London (United Kingdom)", "240"],
     ["2nd", "New York City (United States)", "226"],
     ["3rd", "Grand Cayman (Cayman Islands)", "225"],
@@ -201,5 +201,16 @@ const citiesData = [
     ["183rd", "Delhi (India)", "48"],
     ["184th", "Yogyakarta (Indonesia)", "38"],
 ];
+
+const citiesData = [];
+
+citiesNestedArray.forEach((cityArray) => {
+    const cityDict = {
+        ranking: cityArray[0],
+        name: cityArray[1],
+        priceIndex: parseInt(cityArray[2]),
+    };
+    citiesData.push(cityDict);
+});
 
 export default citiesData;
