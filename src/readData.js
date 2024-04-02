@@ -203,14 +203,101 @@ const citiesNestedArray = [
 ];
 
 const citiesData = [];
+// ChatGPT generated dict
+const country_flags = {
+    "United Kingdom": "🇬🇧",
+    "United States": "🇺🇸",
+    "Cayman Islands": "🇰🇾",
+    Switzerland: "🇨🇭",
+    Singapore: "🇸🇬",
+    Australia: "🇦🇺",
+    Denmark: "🇩🇰",
+    Ireland: "🇮🇪",
+    Bahamas: "🇧🇸",
+    Canada: "🇨🇦",
+    France: "🇫🇷",
+    "New Zealand": "🇳🇿",
+    Netherlands: "🇳🇱",
+    "Hong Kong": "🇭🇰",
+    Norway: "🇳🇴",
+    Israel: "🇮🇱",
+    "United Arab Emirates": "🇦🇪",
+    Luxembourg: "🇱🇺",
+    Finland: "🇫🇮",
+    Sweden: "🇸🇪",
+    Italy: "🇮🇹",
+    Germany: "🇩🇪",
+    Belgium: "🇧🇪",
+    Qatar: "🇶🇦",
+    Austria: "🇦🇹",
+    Uruguay: "🇺🇾",
+    Spain: "🇪🇸",
+    Malta: "🇲🇹",
+    "Palestinian Territory": "🇵🇸",
+    Portugal: "🇵🇹",
+    Macao: "🇲🇴",
+    Mexico: "🇲🇽",
+    "Czech Republic": "🇨🇿",
+    "Costa Rica": "🇨🇷",
+    Slovenia: "🇸🇮",
+    Jordan: "🇯🇴",
+    Greece: "🇬🇷",
+    Croatia: "🇭🇷",
+    China: "🇨🇳",
+    Panama: "🇵🇦",
+    Taiwan: "🇹🇼",
+    Poland: "🇵🇱",
+    Brazil: "🇧🇷",
+    Guatemala: "🇬🇹",
+    Slovakia: "🇸🇰",
+    "El Salvador": "🇸🇻",
+    Venezuela: "🇻🇪",
+    Thailand: "🇹🇭",
+    Hungary: "🇭🇺",
+    Chile: "🇨🇱",
+    Guyana: "🇬🇾",
+    Peru: "🇵🇪",
+    Russia: "🇷🇺",
+    "South Africa": "🇿🇦",
+    Bulgaria: "🇧🇬",
+    Colombia: "🇨🇴",
+    Romania: "🇷🇴",
+    Fiji: "🇫🇯",
+    Indonesia: "🇮🇩",
+    Kenya: "🇰🇪",
+    "Bosnia and Herzegovina": "🇧🇦",
+    Bolivia: "🇧🇴",
+    India: "🇮🇳",
+    Malaysia: "🇲🇾",
+    Vietnam: "🇻🇳",
+};
 
 citiesNestedArray.forEach((cityArray) => {
+    const city_and_country = cityArray[1];
+    let city, country;
+
+    if (city_and_country.includes("(")) {
+        city = city_and_country.substring(0, city_and_country.indexOf("("));
+        country = city_and_country.substring(
+            city_and_country.indexOf("(") + 1,
+            city_and_country.indexOf(")")
+        );
+    } else {
+        city = city_and_country;
+        country = city_and_country;
+    }
+
     const cityDict = {
         ranking: cityArray[0],
-        name: cityArray[1],
+        name: city,
+        country: country_flags[country],
         priceIndex: parseInt(cityArray[2]),
     };
     citiesData.push(cityDict);
+});
+
+citiesData.forEach((city) => {
+    console.log(city.country);
 });
 
 export default citiesData;
