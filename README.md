@@ -6,7 +6,7 @@ You can play the game [here](https://higherorlowercostofliving.netlify.app/)!
 
 Data has be provided by [Expatistan](https://www.expatistan.com/cost-of-living/index?ranking=1).
 
-# Dev Information TEST
+# Dev Information
 
 This app has been made in React.
 
