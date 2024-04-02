@@ -7,6 +7,6 @@ test("Data gets converted to dictionary", () => {
     expect(citiesData).toContainEqual({
         ranking: "11th",
         name: "Singapore",
-        priceIndex: "194",
+        priceIndex: 194,
     });
 });
