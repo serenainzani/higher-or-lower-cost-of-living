@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import ButtonHigherLower from "./ButtonHigherLower.js";
 import City from "./City.js";
 import citiesData from "./readData.js";
 
