@@ -1,7 +1,15 @@
 import "./City.css";
 
 function City(props) {
-    return <p className="city">{props.cityName}</p>;
+    const handleClick = () => {
+        console.log("clicked");
+        if (props.answer) {
+            props.addPoints(true);
+        } else {
+            props.addPoints(false);
+        }
+    };
+    return <button onClick={handleClick}>{props.cityName}</button>;
 }
 
 export default City;

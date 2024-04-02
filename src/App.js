@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import ButtonHigherLower from "./ButtonHigherLower.js";
 import City from "./City.js";
 import citiesData from "./readData.js";
 
@@ -43,21 +42,24 @@ function App() {
             <h1>Higher of Lower</h1>
             <h2>Cities Cost of Living Edition!</h2>
             <p id="score">Score: {score}</p>
-            <p>Is the cost of living in</p>
-            <City cityName={city1.name} />
-            <ButtonHigherLower
-                text="higher"
-                answer={isHigher}
-                addPoints={handleCallback}
-            />
-            <span> or </span>
-            <ButtonHigherLower
-                text="lower"
-                answer={!isHigher}
-                addPoints={handleCallback}
-            />
-            <p>than</p>
-            <City cityName={city2.name} />
+            <p>Is the cost of living higher in...</p>
+            <div>
+                {" "}
+                <City
+                    cityName={city1.name}
+                    answer={isHigher}
+                    addPoints={handleCallback}
+                />
+            </div>
+
+            <p> or </p>
+            <div>
+                <City
+                    cityName={city2.name}
+                    answer={!isHigher}
+                    addPoints={handleCallback}
+                />
+            </div>
         </>
     );
 }
