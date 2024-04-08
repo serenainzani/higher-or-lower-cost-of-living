@@ -9,7 +9,11 @@ function City(props) {
             props.addPoints(false);
         }
     };
-    return <button onClick={handleClick}>{props.cityName}</button>;
+    return (
+        <button className="city" onClick={handleClick}>
+            {props.cityName} <br /> {props.cityCountry}
+        </button>
+    );
 }
 
 export default City;

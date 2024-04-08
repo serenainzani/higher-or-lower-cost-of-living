@@ -1,3 +1,21 @@
 .city {
-    color: red;
+    border-width: 0px;
+    background-color: purple;
+    border-radius:10px;
+    color: white;
+    width: 80vw;
+    height: 20vh;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 5px #bbb;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
 }
+
+
+.city:active {
+    background-color: #3e8e41;
+    box-shadow: none;
+    transform: translateY(5px);
+  }

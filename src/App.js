@@ -39,26 +39,30 @@ function App() {
     }
     return (
         <>
-            <h1>Higher of Lower</h1>
-            <h2>Cities Cost of Living Edition!</h2>
-            <p id="score">Score: {score}</p>
-            <p>Is the cost of living higher in...</p>
-            <div>
-                {" "}
-                <City
-                    cityName={city1.name}
-                    answer={isHigher}
-                    addPoints={handleCallback}
-                />
+            <div className="titles">
+                <h1>Higher or Lower</h1>
+                <h2>Cities Cost of Living Edition!</h2>
             </div>
+            <p id="score">Score: {score}</p>
+            <div className="cityButtons">
+                <div>
+                    <City
+                        cityName={city1.name}
+                        cityCountry={city1.country}
+                        answer={isHigher}
+                        addPoints={handleCallback}
+                    />
+                </div>
 
-            <p> or </p>
-            <div>
-                <City
-                    cityName={city2.name}
-                    answer={!isHigher}
-                    addPoints={handleCallback}
-                />
+                <p> or </p>
+                <div>
+                    <City
+                        cityName={city2.name}
+                        cityCountry={city2.country}
+                        answer={!isHigher}
+                        addPoints={handleCallback}
+                    />
+                </div>
             </div>
         </>
     );
